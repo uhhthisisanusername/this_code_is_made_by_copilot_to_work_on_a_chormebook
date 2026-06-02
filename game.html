@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arcade Games</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="game-styles.css" />
+  <meta name="theme-color" content="#0b5cff" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🕹️ Retro Arcade</h1>
+    <div class="controls">
+      <button id="homeBtn" class="secondary-btn">← Back</button>
+      <button id="installBtn" hidden>Install App</button>
+    </div>
+  </header>
+
+  <main class="game-container">
+    <div class="game-screen">
+      <div id="gameSelector" class="menu">
+        <h2>Choose a Game</h2>
+        <div class="menu-buttons">
+          <button class="game-btn" data-game="snake">🐍 Snake</button>
+          <button class="game-btn" data-game="breakout">🧱 Breakout</button>
+          <button class="game-btn" data-game="pong">🎾 Pong</button>
+        </div>
+      </div>
+
+      <!-- Snake Game -->
+      <div id="snakeGame" class="game hidden">
+        <div class="score-board">
+          <span>Score: <span id="snakeScore">0</span></span>
+          <span>High: <span id="snakeHigh">0</span></span>
+        </div>
+        <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        <div class="controls-info">
+          <p>Arrow Keys or WASD to move</p>
+          <button id="snakeStart">Start Game</button>
+          <button id="snakePause">Pause</button>
+          <button id="snakeMenu" class="secondary-btn">Menu</button>
+        </div>
+      </div>
+
+      <!-- Breakout Game -->
+      <div id="breakoutGame" class="game hidden">
+        <div class="score-board">
+          <span>Score: <span id="breakoutScore">0</span></span>
+          <span>Level: <span id="breakoutLevel">1</span></span>
+        </div>
+        <canvas id="breakoutCanvas" width="400" height="300"></canvas>
+        <div class="controls-info">
+          <p>Mouse to move paddle or A/D keys</p>
+          <button id="breakoutStart">Start Game</button>
+          <button id="breakoutPause">Pause</button>
+          <button id="breakoutMenu" class="secondary-btn">Menu</button>
+        </div>
+      </div>
+
+      <!-- Pong Game -->
+      <div id="pongGame" class="game hidden">
+        <div class="score-board">
+          <span>P1: <span id="pongP1">0</span></span>
+          <span>P2: <span id="pongP2">0</span></span>
+        </div>
+        <canvas id="pongCanvas" width="400" height="300"></canvas>
+        <div class="controls-info">
+          <p>P1: W/S keys | P2: Up/Down arrows</p>
+          <button id="pongStart">Start Game</button>
+          <button id="pongPause">Pause</button>
+          <button id="pongMenu" class="secondary-btn">Menu</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>Works offline · Retro arcade games · High scores saved locally</small>
+  </footer>
+
+  <script src="games.js" type="module"></script>
+</body>
+</html>
