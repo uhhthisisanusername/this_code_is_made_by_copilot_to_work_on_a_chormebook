@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChromebookNotes</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0b5cff" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>ChromebookNotes</h1>
+    <div class="controls">
+      <input id="search" placeholder="Search notes..." aria-label="Search notes" />
+      <button id="newNote">New Note</button>
+      <button id="installBtn" hidden>Install App</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <ul id="notesList" class="notes-list" aria-label="Notes list"></ul>
+    </aside>
+
+    <section class="editor">
+      <input id="noteTitle" placeholder="Note title" />
+      <div class="editor-row">
+        <textarea id="noteBody" placeholder="Write your note here..."></textarea>
+        <div class="preview" id="preview"></div>
+      </div>
+      <div class="editor-actions">
+        <button id="saveBtn">Save</button>
+        <button id="deleteBtn" class="danger">Delete</button>
+        <span id="status" class="status">Idle</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Works offline · Installable on Chromebook · Data stored locally</small>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
